@@ -1,0 +1,33 @@
+<h1>Listing items</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date collected</th>
+    <th>Checked in</th>
+    <th>Checked out</th>
+    <th>Checked out by</th>
+    <th>Tag number</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.date_collected %></td>
+    <td><%= item.checked_in %></td>
+    <td><%= item.checked_out %></td>
+    <td><%= item.checked_out_by %></td>
+    <td><%= item.tag_number %></td>
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Item', new_item_path %>
