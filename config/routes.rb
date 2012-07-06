@@ -1,4 +1,14 @@
 Collector::Application.routes.draw do
+  get "pages/index"
+
+  get "pages/help"
+
+  get "pages/about"
+
+  get "pages/terms"
+
+  get "pages/privacy"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
