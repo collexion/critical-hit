@@ -41,6 +41,9 @@
   <b>Tag number:</b>
   <%= @item.tag_number %>
 </p>
+<p>
+  <%= check_in_out_link_helper(@item) %>
+</p>
 
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
