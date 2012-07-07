@@ -1,3 +1,4 @@
+<h2>Item Detail</h2>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,18 +7,29 @@
 </p>
 
 <p>
+  <b>Desc:</b>
+  <%= @item.desc %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @item.type %>
+</p>
+
+
+<p>
   <b>Date collected:</b>
   <%= @item.date_collected %>
 </p>
 
 <p>
   <b>Checked in:</b>
-  <%= @item.checked_in %>
+  <%= @item.time_checked_in %>
 </p>
 
 <p>
   <b>Checked out:</b>
-  <%= @item.checked_out %>
+  <%= @item.time_checked_out %>
 </p>
 
 <p>

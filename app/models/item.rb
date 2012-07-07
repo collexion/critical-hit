@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :checked_in, :checked_out, :checked_out_by, :date_collected, :name, :tag_number
+  attr_accessible :time_checked_in, :time_checked_out, :checked_out_by, :date_collected, :name, :tag_number, :type, :desc
 
   validates :tag_number, uniqueness: true, allow_nil: true
 

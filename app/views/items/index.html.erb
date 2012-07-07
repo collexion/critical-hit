@@ -1,11 +1,11 @@
-<h1>Listing items</h1>
+<h1>Listing Items</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Date collected</th>
-    <th>Checked in</th>
-    <th>Checked out</th>
+    <th>Time Checked in</th>
+    <th>Time Checked out</th>
     <th>Checked out by</th>
     <th>Tag number</th>
     <th></th>
@@ -17,8 +17,8 @@
   <tr>
     <td><%= item.name %></td>
     <td><%= item.date_collected %></td>
-    <td><%= item.checked_in %></td>
-    <td><%= item.checked_out %></td>
+    <td><%= item.time_checked_in %></td>
+    <td><%= item.time_checked_out %></td>
     <td><%= item.checked_out_by %></td>
     <td><%= item.tag_number %></td>
     <td><%= link_to 'Show', item %></td>
