@@ -83,6 +83,7 @@ class ItemsController < ApplicationController
 
   # TODO(chase): this should probably be one action that changes the state
   #               of the item.
+  #               also, probably shouldn't redirect, maybe just some ajax.
 
   def check_in
     @item = Item.find(params[:id])

@@ -5,6 +5,9 @@ class Item < ActiveRecord::Base
 
   before_create :assign_tag_number
 
+  # TODO(chase): should set some defaults before create.
+  #             time_checked_out should default to nil on create not Time.now
+
   def assign_tag_number
     if self.tag_number.nil? || self.tag_number.empty?
       self.tag_number = create_random_tag
