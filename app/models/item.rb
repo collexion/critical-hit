@@ -1,12 +1,12 @@
 class Item < ActiveRecord::Base
   attr_accessible :checked_in, :checked_out, :checked_out_by, :date_collected, :name, :tag_number
 
-  validates :tag_number, uniqueness: true
+  validates :tag_number, uniqueness: true, allow_nil: true
 
   before_save :assign_tag_number
 
   def assign_tag_number
-    if self.tag_number.empty?
+    if self.tag_number.nil?
       self.tag_number = create_random_tag
     else
       return

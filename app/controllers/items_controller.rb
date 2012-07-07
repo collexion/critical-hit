@@ -80,4 +80,12 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def check_in
+    #
+  end
+
+  def check_out
+    #
+  end
 end
