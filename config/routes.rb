@@ -1,5 +1,10 @@
 Collector::Application.routes.draw do
-  resources :items
+  resources :items do
+    member do
+      put :check_in
+      put :check_out
+    end
+  end
 
   devise_for :users
 
