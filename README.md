@@ -6,3 +6,5 @@ TODO:
 - inventory control
   - check-in, check-out, barcode creator
 - membership CRUD
+- donations
+  - stripe?
