@@ -18,6 +18,8 @@ Collector::Application.routes.draw do
 
   get "pages/privacy"
 
+  match ':tag_number' => 'items#go'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

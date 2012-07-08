@@ -114,4 +114,9 @@ class ItemsController < ApplicationController
       redirect_to @item, error: 'Item is not checked in'
     end
   end
+
+  def go
+    @item = Item.find_by_tag_number!(params[:tag_number])
+    redirect_to @item
+  end
 end
