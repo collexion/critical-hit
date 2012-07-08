@@ -1,0 +1,20 @@
+<%= simple_form_for(@item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :type %>
+    <%= f.input :desc %>
+    <%= f.input :donated_by %>
+    <%= f.input :maintained_by %>
+    <%= f.input :date_collected %>
+    <%= f.input :time_checked_in %>
+    <%= f.input :time_checked_out %>
+    <%= f.input :checked_out_by %>
+    <%= f.input :tag_number %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

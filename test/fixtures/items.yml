@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  date_collected: 2012-07-06 16:50:14
+  checked_in: 2012-07-06 16:50:14
+  checked_out: 2012-07-06 16:50:14
+  checked_out_by: 1
+  tag_number: MyString
+
+two:
+  name: MyString
+  date_collected: 2012-07-06 16:50:14
+  checked_in: 2012-07-06 16:50:14
+  checked_out: 2012-07-06 16:50:14
+  checked_out_by: 1
+  tag_number: MyString

@@ -1,0 +1,56 @@
+<h2>Item Detail</h2>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @item.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @item.desc %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @item.type %>
+</p>
+<p>
+  <b>Donated By:</b>
+  <%= @item.donated_by %>
+</p>
+<p>
+  <b>Maintained By:</b>
+  <%= @item.maintained_by %>
+</p>
+<p>
+  <b>Date collected:</b>
+  <%= @item.date_collected %>
+</p>
+
+<p>
+  <b>Checked in:</b>
+  <%= @item.time_checked_in %>
+</p>
+
+<p>
+  <b>Checked out:</b>
+  <%= @item.time_checked_out %>
+</p>
+
+<p>
+  <b>Checked out by:</b>
+  <%= @item.checked_out_by %>
+</p>
+
+<p>
+  <b>Tag number:</b>
+  <%= @item.tag_number %>
+</p>
+<p>
+  <%= check_in_out_link_helper(@item) %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
