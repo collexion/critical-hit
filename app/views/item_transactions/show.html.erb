@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Item:</b>
+  <%= @item_transaction.item_id %>
+</p>
+
+<p>
+  <b>Item creation time:</b>
+  <%= @item_transaction.item_creation_time %>
+</p>
+
+<p>
+  <b>Item checkin time:</b>
+  <%= @item_transaction.item_checkin_time %>
+</p>
+
+<p>
+  <b>Item checkout time:</b>
+  <%= @item_transaction.item_checkout_time %>
+</p>
+
+<p>
+  <b>Item deletion time:</b>
+  <%= @item_transaction.item_deletion_time %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @item_transaction.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_transaction_path(@item_transaction) %> |
+<%= link_to 'Back', item_transactions_path %>

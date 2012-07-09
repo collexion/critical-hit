@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item_id: 1
+  item_creation_time: 2012-07-08 18:41:01
+  item_checkin_time: 2012-07-08 18:41:01
+  item_checkout_time: 2012-07-08 18:41:01
+  item_deletion_time: 2012-07-08 18:41:01
+  user_id: 1
+
+two:
+  item_id: 1
+  item_creation_time: 2012-07-08 18:41:01
+  item_checkin_time: 2012-07-08 18:41:01
+  item_checkout_time: 2012-07-08 18:41:01
+  item_deletion_time: 2012-07-08 18:41:01
+  user_id: 1

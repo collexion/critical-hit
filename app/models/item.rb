@@ -5,6 +5,7 @@ class Item < ActiveRecord::Base
 
   before_create :set_defaults
   before_create :assign_tag_number
+  after_save    :log_transaction
 
   # TODO(chase): should set some defaults before create.
   #             time_checked_out should default to nil on create not Time.now
@@ -28,6 +29,11 @@ class Item < ActiveRecord::Base
 
   def lookup_by_tag_number(tag)
     where(tag_number: tag).first
+  end
+
+  def log_transaction
+    # not sure if this is the way to do this...
+    # want to have a historical log of check-ins/out on x item
   end
 
 end

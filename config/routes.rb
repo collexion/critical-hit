@@ -1,4 +1,6 @@
 Collector::Application.routes.draw do
+  resources :item_transactions, only: [:create, :index, :show]
+
   resources :items do
     member do
       put :check_in
