@@ -13,6 +13,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'paper_trail', '~> 2'
 gem 'simple_form'
 gem 'devise'
 

@@ -1,4 +1,6 @@
 class Item < ActiveRecord::Base
+  has_paper_trail
+
   attr_accessible :time_checked_in, :time_checked_out, :checked_out_by,
                   :date_collected, :name, :tag_number, :type, :desc,
                   :checkedin, :checkedout, :donated_by, :maintained_by
