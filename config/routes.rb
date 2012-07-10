@@ -1,4 +1,8 @@
 Collector::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resources :items do
     member do
       put :check_in
