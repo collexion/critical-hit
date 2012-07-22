@@ -1,8 +1,7 @@
 class Subscription < ActiveRecord::Base
   belongs_to :user
   belongs_to :member_type
-  # attr_accessible :amount, :references, :strip_customer_token, :member_type_id,
-  #                 :stripe_customer_token, :strip_card_token
+  attr_accessible :amount, :member_type_id, :stripe_customer_token, :stripe_card_token
 
   validates_presence_of :member_type_id
 

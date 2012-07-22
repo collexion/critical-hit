@@ -2,7 +2,7 @@
   Signing up for "<%= @subscription.member_type.name %>"</h1>
 <p>Includes <strong>all this blah</strong> for only <strong><%= number_to_currency @subscription.member_type.donation_rate %></strong> per month!</p>
 
-<%= form_for @subscription, html:{class: 'well'} do |f| %>
+<%= simple_form_for @subscription, html:{class: 'well'} do |f| %>
   <% if @subscription.errors.any? %>
     <div class="error_messages">
       <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
