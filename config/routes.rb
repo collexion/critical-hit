@@ -1,6 +1,8 @@
 Collector::Application.routes.draw do
   resources :subscriptions
-  resources :member_types
+  resources :member_types do
+    resources :subscriptions
+  end
 
   ActiveAdmin.routes(self)
 

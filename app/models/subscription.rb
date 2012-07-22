@@ -1,7 +1,8 @@
 class Subscription < ActiveRecord::Base
   belongs_to :user
   belongs_to :member_type
-  attr_accessible :amount, :references, :strip_customer_token
+  # attr_accessible :amount, :references, :strip_customer_token, :member_type_id,
+  #                 :stripe_customer_token, :strip_card_token
 
   validates_presence_of :member_type_id
 
@@ -9,7 +10,7 @@ class Subscription < ActiveRecord::Base
 
   def save_with_payment
     if valid?
-      customer = Stripe::Customer.create(description: email, plan: member_type_id, card: stripe_card_token)
+      customer = Stripe::Customer.create(description: "fill in later with userid", plan: member_type_id, card: stripe_card_token)
       self.stripe_customer_token = customer.id
       save!
     end

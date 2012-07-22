@@ -13,10 +13,9 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions/new
   # GET /subscriptions/new.json
   def new
-    @user = current_user
-    member_type = MemberType.find(params[:member_type])
-    @subscription = member_type.subscription.build
-
+    member_type = MemberType.find(params[:member_type_id])
+    @subscription = member_type.subscriptions.build
+    #@subscription.user_id = current_user.id
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @subscription }
@@ -32,6 +31,7 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions.json
   def create
     @subscription = Subscription.new(params[:subscription])
+
     if @subscription.save_with_payment
       redirect_to @subscription, :notice => "Thank you for subscribing!"
     else

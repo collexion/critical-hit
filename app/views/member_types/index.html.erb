@@ -1,0 +1,5 @@
+<ul>
+  <% @member_types.each do |mt| %>
+    <li><%= mt.name %>, <%= number_to_currency mt.donation_rate %> link to join. disable if already at this member ship level</li>
+  <% end %>
+</ul>
