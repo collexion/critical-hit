@@ -16,3 +16,31 @@ if Item.create!(
     maintained_by: ""
   }
 ) then puts "Created some items." end
+
+
+[
+  {
+    name: 'Student',
+    description: 'Schooled',
+    donation_rate: 5
+  },
+  {
+    name: 'Hacker',
+    description: '1337',
+    donation_rate: 25
+  },
+  {
+    name: 'Maker',
+    description: 'I love the smell of solder in the morning.',
+    donation_rate: 50
+  },
+  {
+    name: 'Crazy-wise',
+    description: 'Just look at my beard.',
+    donation_rate: 75
+  }
+].each.with_index(1) do |e,i|
+  if MemberType.create!(e, without_protection: true)
+    puts "Created Member Type #{i}."
+  end
+end

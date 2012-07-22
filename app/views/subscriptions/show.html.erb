@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>References:</b>
+  <%= @subscription.references %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @subscription.amount %>
+</p>
+
+<p>
+  <b>Strip customer token:</b>
+  <%= @subscription.strip_customer_token %>
+</p>
+
+
+<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
+<%= link_to 'Back', subscriptions_path %>

@@ -1,4 +1,7 @@
 Collector::Application.routes.draw do
+  resources :subscriptions
+  resources :member_types
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

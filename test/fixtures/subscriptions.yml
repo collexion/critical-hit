@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  references: 
+  amount: 1
+  strip_customer_token: MyString
+
+two:
+  references: 
+  amount: 1
+  strip_customer_token: MyString

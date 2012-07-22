@@ -18,6 +18,7 @@ end
 gem 'paper_trail', '~> 2'
 gem 'simple_form'
 gem 'devise'
+gem 'stripe'
 
 gem 'activeadmin'
 gem 'meta_search',    '>= 1.1.0.pre'
