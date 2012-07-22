@@ -10,6 +10,9 @@ class Item < ActiveRecord::Base
   before_create :set_defaults
   before_create :assign_tag_number
 
+  # Validations
+  # Should validate that Item can't be checkedin and checkedout simultaneously
+
   # TODO(chase): should set some defaults before create.
   #             time_checked_out should default to nil on create not Time.now
 
@@ -19,6 +22,7 @@ class Item < ActiveRecord::Base
 
   def assign_tag_number
     if self.tag_number.nil? || self.tag_number.empty?
+      # TODO(chase): should probably test if the tag number previously exists
       self.tag_number = create_random_tag
     else
       return
@@ -34,4 +38,27 @@ class Item < ActiveRecord::Base
     where(tag_number: tag).first
   end
 
+  # Changes the checkedin, checkedout status and timestamp.
+  def change_availability
+    unless self.lost_item?
+      if self.checkedin?
+        # change to checkedout
+        self.update_attributes(checkedout: true, time_checked_in: '',
+                                checkedin: false, checked_out_by: current_user,
+                                time_checked_out: Time.now)
+      elsif self.checkedout?
+        # change to checkedin
+        self.update_attributes(checkedout: false, time_checked_in: Time.now,
+                                checkedin: true, checked_out_by: '',
+                                time_checked_out: nil)
+      else
+        raise 'unable to change availbility'
+      end
+    end
+  end
+
+  def change_existence
+    # set lost_item to true or false
+    self.update_attributes(lost_item: true)
+  end
 end

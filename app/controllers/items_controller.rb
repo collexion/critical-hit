@@ -88,10 +88,8 @@ class ItemsController < ApplicationController
   def check_in
     @item = Item.find(params[:id])
     if @item.checkedout?
-      if @item.update_attributes(checkedout: false, time_checked_in: Time.now,
-                              checkedin: true, checked_out_by: '',
-                              time_checked_out: nil)
-          redirect_to @item, success: 'Item successfully checked in'
+      if @item.change_availability
+        redirect_to @item, success: 'Item successfully checked in'
       else
         redirect_to @item, error: 'Item could not be checked in'
       end
@@ -103,10 +101,8 @@ class ItemsController < ApplicationController
   def check_out
     @item = Item.find(params[:id])
     if @item.checkedin?
-      if @item.update_attributes(checkedout: true, time_checked_in: '',
-                              checkedin: false, checked_out_by: current_user,
-                              time_checked_out: Time.now)
-        redirect_to @item, success: 'Item successfully checked in'
+      if @item.change_availability
+        redirect_to @item, success: 'Item successfully checked out'
       else
         redirect_to @item, error: 'Item could not be checked out'
       end
