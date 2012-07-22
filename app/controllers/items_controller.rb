@@ -81,14 +81,15 @@ class ItemsController < ApplicationController
     end
   end
 
-  # TODO(chase): this should probably be one action that changes the state
+  # TODO(chase): This should probably be one action that changes the state
   #               of the item.
-  #               also, probably shouldn't redirect, maybe just some ajax.
+  #              Also, probably shouldn't redirect, maybe just some ajax.
 
+  # PUT /items/1/check_in
   def check_in
     @item = Item.find(params[:id])
     if @item.checkedout?
-      if @item.change_availability
+      if @item.change_availability(current_user.id)
         redirect_to @item, success: 'Item successfully checked in'
       else
         redirect_to @item, error: 'Item could not be checked in'
@@ -98,10 +99,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  # PUT /items/1/check_out
   def check_out
     @item = Item.find(params[:id])
     if @item.checkedin?
-      if @item.change_availability
+      if @item.change_availability(current_user.id)
         redirect_to @item, success: 'Item successfully checked out'
       else
         redirect_to @item, error: 'Item could not be checked out'

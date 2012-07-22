@@ -39,12 +39,12 @@ class Item < ActiveRecord::Base
   end
 
   # Changes the checkedin, checkedout status and timestamp.
-  def change_availability
+  def change_availability(user_id)
     unless self.lost_item?
       if self.checkedin?
         # change to checkedout
         self.update_attributes(checkedout: true, time_checked_in: '',
-                                checkedin: false, checked_out_by: current_user,
+                                checkedin: false, checked_out_by: user_id,
                                 time_checked_out: Time.now)
       elsif self.checkedout?
         # change to checkedin
