@@ -12,4 +12,4 @@ TODO, please assign yourself to a topic if you are hacking on it:
 - donations
   - stripe?
 - recurring (monthly / annual) billing
-  - stripe?
+  - stripe? (chaserx started on this in a branch `stripe_subscriptions`)
