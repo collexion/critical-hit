@@ -9,7 +9,7 @@ class Subscription < ActiveRecord::Base
 
   def save_with_payment
     if valid?
-      customer = Stripe::Customer.create(description: "fill in later with userid", plan: member_type_id, card: stripe_card_token)
+      customer = Stripe::Customer.create(description: "fill in later with user name", plan: member_type_id, card: stripe_card_token)
       self.stripe_customer_token = customer.id
       save!
     end
@@ -18,4 +18,5 @@ class Subscription < ActiveRecord::Base
     errors.add :base, "There was a problem with your credit card."
     false
   end
+
 end
