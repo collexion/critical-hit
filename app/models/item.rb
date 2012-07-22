@@ -1,8 +1,10 @@
 class Item < ActiveRecord::Base
   has_paper_trail
 
+  # NOTE(chase): I know this is wrong but here for test.
+  # TODO(chase): Protect the attributes.
   attr_accessible :time_checked_in, :time_checked_out, :checked_out_by,
-                  :date_collected, :name, :tag_number, :type, :desc,
+                  :date_collected, :name, :tag_number, :item_type, :desc,
                   :checkedin, :checkedout, :donated_by, :maintained_by
 
   before_create :set_defaults
