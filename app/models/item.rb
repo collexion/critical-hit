@@ -38,6 +38,13 @@ class Item < ActiveRecord::Base
     where(tag_number: tag).first
   end
 
+  # create a QR code the contains a URL with something like the following:
+    # https://shopkeeper.collexion.net/item/:item_tag/change_availability
+    # if logged_in? then the item would be checkedout by the current user
+  def create_qr_code_image
+    # best library? method? google?
+  end
+
   # Changes the checkedin, checkedout status and timestamp.
   def change_availability(user_id)
     unless self.lost_item?
